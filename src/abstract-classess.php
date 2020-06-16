@@ -52,3 +52,82 @@ echo "\nThis car is of " . $toyotaCar->getColor() . ' color.' . PHP_EOL;
 // Simulation 2
 $hondaCar->setTankVolume(30);
 echo "\nThis car can drive " . $hondaCar->milesOnFullTank() . ' miles on full tank. ' . PHP_EOL;
+
+// Example 2: ---------------------------------------------------------------------------------
+// Context:
+// Animal
+
+abstract class Animal
+{
+    // Methods
+    abstract public function eat(string $food) : bool;
+    
+    abstract public function talk(bool $shout) : string;
+
+    // non-abstract method.
+    public function walk(int $speed) : bool
+    {
+        if ($speed > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+class Cat extends Animal
+{
+    // Methods
+    public function eat(string $food): bool
+    {
+        if ($food === "tuna") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function talk(bool $shout): string
+    {
+        if ($shout === true) {
+            return "MEOW!\n";
+        } else {
+            return "Meow.\n";
+        }
+    }
+}
+
+class Dog extends Animal
+{
+    // Methods
+    public function eat(string $food): bool
+    {
+        if (($food === "dog food") || ($food === "meat")) {
+            return true;
+        } else {
+            return false;
+        }
+        ;
+    }
+
+    public function talk(bool $shout): string
+    {
+        if ($shout === true) {
+            return "WOOF!\n";
+        } else {
+            return "Woof.\n";
+        }
+    }
+    
+}
+
+// Simulation
+$lula = new Cat();
+echo $lula->walk(2);
+echo $lula->eat("tuna");
+echo $lula->talk(true);
+
+$yame = new Dog();
+echo $yame->walk(2);
+echo $yame->eat("meat");
+echo $yame->talk(true);
