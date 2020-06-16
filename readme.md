@@ -4,8 +4,8 @@ This repo contains my notes on Object oriented programming using php.
 
 There are two directories of interest:
 
-- ./snippets: contains code snippets. [Currently, only UltiSnips vim]
-- ./cheatsheet: contains examples for every section in this file, it can be used while solving challenges.
+- `./snippets`: contains code snippets. [Currently, only UltiSnips vim]
+- `./src`: contains examples for every section in this file, it can be used while solving challenges.
 
 # NOTES
 ## Object Oriented Programming
@@ -27,7 +27,7 @@ Classes are used to group the code that handles a certain topic into one place.
 There are properties and methods inside every class that can be defined with a
 keyword of `public` `private` or `protected`. [more on this here](#public%2C-private%2C-and-protected-keywords)
 
-[See cheatsheet](./cheatsheets/class.php)
+[See cheatsheet](./src/class.php)
 
 
 ## Objects
@@ -48,7 +48,7 @@ be create from a User class. Although objects share the same code, the can
 behave differently because they can have different values assigned to them.
 
 
-[See cheatsheet](./cheatsheets/class.php)
+[See cheatsheet](./src/class.php)
 
 ## $this Keyword
 
@@ -56,7 +56,7 @@ behave differently because they can have different values assigned to them.
 the class. Among different uses of this keyword, there is chaining methods and
 properties. 
 
-[See example](./cheatsheets/chaining-with-this.php)
+[See example](./src/chaining-with-this.php)
 
 ## Public, Private, and Protected Keywords
 
@@ -75,7 +75,7 @@ our private properties from public scope. This is useful when for example we
 want to define a hook each time a method is called to get the model of the
 object, such as save the request in a log. 
 
-[See example](./cheatsheets/access-private-props.php)
+[See example](./src/access-private-props.php)
 
 
 ## Inheritance
@@ -84,7 +84,7 @@ Inheritances enable us to reduce code duplications by creating a parent/master
 class with properties and method that can be inherited by child class. In php
 we can inherit from another class by using `extends` keyword. 
 
-[See example](./cheatsheets/inheritance.php)
+[See example](./src/inheritance.php)
 
 
 ## Abstract classes
@@ -95,7 +95,7 @@ with a abstract keyword in front of it. They get used for multiple reasons:
 1. When we want be commit to writing certain class methods, or when we are only sure of there names.
 2. When we want child classes to define these methods.
 
-[See example](./cheatsheets/abstract-classess.php)
+[See example](./src/abstract-classess.php)
 
 ## Interfaces
 
@@ -121,14 +121,14 @@ between subclasses
 | All methods declared in interface should be public | An abstract class can have public, private and protected etc methods. |
 | Multiple interfaces can be implemented by one class. | One class can extend only one abstract class. |
 
-[See example](./cheatsheets/interface.php)
+[See example](./src/interface.php)
 
 ## Polymorphism
 
 Put simply, Polymorphism is a principle that state that methods in different
 classes doing similar things should have the same name. 
 
-[See example](./cheatsheets/polymorphism.php)
+[See example](./src/polymorphism.php)
 
 ## Type hinting
 
@@ -201,7 +201,7 @@ When using a trait, we should be on the lookout for code duplication and for
 naming conflicts that are the result of calling the methods in different traits
 with the same name. 
 
-[See example](./cheatsheets/traits.php)
+[See example](./src/traits.php)
 
 ## Namespaces and code integration
 
@@ -318,7 +318,7 @@ instructions to the users that they need to cntact technical support.
 
 In php we can hadle exception with making the use of `Exception` class
 
-[See example](./cheatsheets/exception-handling.php)
+[See example](./src/exception-handling.php)
 
 # END
 
