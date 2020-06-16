@@ -5,7 +5,8 @@
 // Context:
 // Have an abstract class that has a method to commit child class to define it. 
 
-abstract class Car {
+abstract class Car
+{
   // Abstract classes can have properties
   protected $tankVolume;
   // Abstract method
@@ -15,29 +16,33 @@ abstract class Car {
   {
     $this->tankVolume = $volume;
   }
- 
 }
-// create class out of abstract class
-class Honda extends Car {
 
+// create class out of abstract class
+class Honda extends Car
+{
   public function milesOnFullTank()
   {
     return $this->tankVolume * 20;
   }
-}; $hondaCar = new Toyota();
+};
 
-class Toyota extends Car {
+class Toyota extends Car
+{
 
   public function milesOnFullTank()
   {
     return $this->tankVolume * 33;
   }
- // Method specify to this class
+  // Method specify to this class
   public function getColor()
   {
     return "beige";
   }
-}; $toyotaCar = new Toyota();
+};
+
+$hondaCar = new Honda();
+$toyotaCar = new Toyota();
 
 // Simulation 1
 $toyotaCar->setTankVolume(10);
