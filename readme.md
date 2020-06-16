@@ -39,7 +39,7 @@ keyword of `public` `private` or `protected`. [more on this here](#public-privat
 
 ## Objects
 
-### What can be seen as an object?
+**What can be seen as an object?**
 
 When you look at a person, you see the person as an object. And an object is
 defined by two components: attributes (properties) and behaviors (methods). A
@@ -47,7 +47,7 @@ person has attributes, such as eye color, age, height, and so on. A person also
 has behaviors, such as walking, talking, breathing, and so a. In its basic
 definition, an object is an entity that contains both data and behavior.
 
-### What are objects?
+**What are objects?**
 
 Objects are the building blocks of an OO program, they are basicly instances of
 a some class. A program that leverages OO stlye is basically a collection of
@@ -56,7 +56,6 @@ objects. A class holds the behaviors (contained in methods) and data
 
 The behavior of an object represents what the object can do and the data stored
 within an object represents the state of the object. 
-
 
 [See cheatsheet](./src/class.php)
 
@@ -335,6 +334,63 @@ Rules to follow when implementing exceptions handling
 - Know what to do with an exception before throwing it.
 - If you have no idea what to do with a caugt exception then it shouldn't be caught.
 
+## Design Guidelines
+
+## Classes
+
+As we all know by know, OOP Style supports the idea of creating classes that
+are complete packages, encapsulating the methods and properties of a single
+entity. So, a class can be represent a logical component. The following are
+general design guidelines to be followed when developing classes:
+
+1. **Mimic the real world**: When creating classes, we should design them in a
+   way that represents the true behavior of the object. For example, `User`
+   class and `Webapp` class model a real-world entity. The `User` and `Webapp`
+   objects encapsulate their data and behavior, and they interact through each
+   other’s [public](#public-private-and-protected-keywords) interfaces.
+2. **Identify the public interfaces**: perhaps the most important issue when
+   designing a class is to keep the public interface to a minimum. The entire
+   purpose of building a class is to provide something useful and concise. The
+   goal is to provide the user with exact interface to do the job right.
+3. **Design robust constructor**: constructors that deals with how will the
+   class be constructed. A constructor should put an object into an initial,
+   safe state. This includes issues such as properties initialization and
+   memory management.
+4. **Design Error Handling**: As with the design of constructors, designing how
+   a class handles errors is of vital importance. 
+5. **Document the class and using comments**: A lack of proper documentation
+   and comments can undermine the entire system. One of the most crucial
+   aspects of a good design, whether it’s a design for a class or something
+   else, is to carefully document the process. 
+6. **Design with reuse in mind**: OO coding enable us to easily reuse our code
+   in different systems. Make sure when you design classes, to keep reusability
+   in mind, attempt to predict all the possible scenarios in which it will be
+   used.
+7. **Design with extensibility in mind**: Adding new features to a class might
+   be as simple as extending an existing class, adding a few new methods, and
+   modifying the behavior of others. If you have just written a Person class,
+   you must consider the fact that you might later want to write an Employee
+   class or a Customer class. Thus, having Employee inherit from Person might
+   be the best strategy; in this case, the Person class is said to be
+   extensible. You do not want to design Person so that it contains behavior
+   that prevents it from being extended by classes such as Employee or
+   Customer(assuming that in your design you really intend for other classes to
+   extend Person).  
+8. **Design with maintainability in mind**: Designing useful and concise
+   classes promotes a high level of maintainability. Just as you design a class
+   with extensibility in mind, you should also design with future maintenance
+   in mind. The process of designing classes forces you to organize your code
+   into many (ideally) manageable pieces. Separate pieces of code tend to be
+   more maintainable than larger pieces of code (at least that’s the idea). One
+   of the best ways to promote maintainability is to reduce interdependent
+   code.
+9. **Use Object Persistence**: Object persistence is another issue that must be
+   addressed in many OO systems. Persistence is the concept of maintaining the
+   state of an object. When you run a program, if you don’t save the object in
+   some manner, the object dies, never to be recovered. These transient objects
+   might work in some applications, but in most business systems, the state of
+   the object must be saved for later use.
+ 
 # END
 
 [Currently, only UltiSnips vim]: https://github.com/sirver/UltiSnips
