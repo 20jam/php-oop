@@ -13,7 +13,13 @@ There are two directories of interest:
 OOP is a programming style in which we group variables and methods of a
 particular topic into single class. OOP is heavily adopted because it support
 code organization, provides modularity and reduces the need to repeat
-ourselves.
+ourselves. The main object-oriented concept are as follows:
+
+- Encapsulation
+- Inheritance
+- Polymorphism
+- Composition
+
 
 ## Classes
 
@@ -26,10 +32,21 @@ keyword of `public` `private` or `protected`. [more on this here](#public%2C-pri
 
 ## Objects
 
+### What can be seen as an object?
+
+When you look at a person, you see the person as an object. And an object is
+defined by two components: attributes (properties) and behaviors (methods). A
+person has attributes, such as eye color, age, height, and so on. A person also
+has behaviors, such as walking, talking, breathing, and so a. In its basic
+definition, an object is an entity that contains both data and behavior.
+
+### What can be seen as an object?
+
 Objects are instance of a class. A class holds the methods and properties that
 are shared by all of the objects that are created from it. a User instance can
 be create from a User class. Although objects share the same code, the can
 behave differently because they can have different values assigned to them.
+
 
 [See cheatsheet](./cheatsheets/class.php)
 
@@ -64,8 +81,8 @@ object, such as save the request in a log.
 ## Inheritance
 
 Inheritances enable us to reduce code duplications by creating a parent/master
-class with properties and method that can be inherited by child class by using
-`extends` keyword. 
+class with properties and method that can be inherited by child class. In php
+we can inherit from another class by using `extends` keyword. 
 
 [See example](./cheatsheets/inheritance.php)
 
