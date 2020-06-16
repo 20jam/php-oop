@@ -330,6 +330,11 @@ In php we can hadle exception with making the use of `Exception` class
 
 [See example](./src/exception-handling.php)
 
+Rules to follow when implementing exceptions handling 
+
+- Know what to do with an exception before throwing it.
+- If you have no idea what to do with a caugt exception then it shouldn't be caught.
+
 # END
 
 [Currently, only UltiSnips vim]: https://github.com/sirver/UltiSnips
