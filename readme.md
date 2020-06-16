@@ -25,7 +25,7 @@ ourselves. The main object-oriented concept are as follows:
 
 Classes are used to group the code that handles a certain topic into one place.
 There are properties and methods inside every class that can be defined with a
-keyword of `public` `private` or `protected`. [more on this here](#public%2C-private%2C-and-protected-keywords)
+keyword of `public` `private` or `protected`. [more on this here](#public-private-and-protected-keywords)
 
 [See cheatsheet](./src/class.php)
 
