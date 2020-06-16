@@ -64,7 +64,7 @@ foreach ($dataFromCars as $i => $value) {
 // note that most fatal errors shouldnt be caught, 
 // but instead handled by the site-wide error handler
 
-$fuelEconomy = new FuelEnocomy();
+$fuelEconomy = new FuelEconomy();
 
 // even without a distinct error handlerr, PHP provides the basic handling
 // shuch as showing the error on-screen on the developer's PC
