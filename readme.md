@@ -61,9 +61,9 @@ within an object represents the state of the object.
 
 ## $this Keyword
 
-`$this` keyword are used to interact with a class method or properties from with
-the class. Among different uses of this keyword, there is chaining methods and
-properties. 
+`$this` keyword are used to interact with a class method or properties from
+within the class. Among different uses of this keyword, there is chaining
+methods and properties. 
 
 [See example](./src/chaining-with-this.php)
 
@@ -159,6 +159,8 @@ function funName(int $arg) {  }
 function funName(float $arg) {  }
 ```
 
+To specify the output type of a function, we add after `(expected type)` `: int`
+
 ## Static methods and properties
 
 Static methods and properties are those properties with `static` keyword
@@ -236,56 +238,70 @@ Using a namespace:
 4. now we can use the class by `$carintro = new Acme\Car\CarIntro()`
 5. or use an alias with `use Acme\Car\CarIntro as Intro;`
 
-## Dependancy Injection
+## Dependency Injection
 
-Dependancy injection is the most less understood subject. Lets answer the above
-question by having a problem and a solution.
+Dependency injection is the process whereby we input dependencies that the
+application needs directly into the object itself, instead of adding it to our
+class.
 
-When class A cannot do its job without class B, we say that class A is
-dependent on class B. In order to perform this dependency, many programmers
-create the object from class B in the constructor of class A.
+When writing a class, it's natural to use other dependencies; perhaps a
+database model class. So with dependency injection, instead of a class having
+its database model created in itself, you can create it outside that object and
+inject it in. 
 
-**The problem: tight coupling between classes**
+In other words, When `class A` cannot do its job without `class B`, we say that
+`class A` is dependent on `class B`. In order to perform this dependency, we
+have to options: injected, or initialize it.
 
-a Car is dependent on Human Driver, so we might be tempted to create the object
-from the `HumanDriver` class in the constructor of the `Car` class.
+When thinking of dependency injection, there are four separate roles involved:
+
+- The service to be injected
+- The client that depends on the service being injected
+- The interface that determines how the client can use the service
+- The injector that is responsible for instantiating the service and injecting it into
+
+Lets look at the two ways where we make one class dependent on other:
+
+### The Wrong Way: Tight coupling between classes
+
+a Car is dependent on Human Driver, so we create `HumanDriver` object from the
+in the constructor of the `Car` class.
 
 ```php
-class HumanDriver {
-  // Method to return the driver name.
-  public function sayYourName($name) {
-    return $name;
-  }
+class HumanDriver 
+{
+    // Method to return the driver name.
+    public function sayYourName($name) 
+    {
+        return $name;
+    }
 }
-class Car {
-  protected $driver;
-  // We create the driver object in the constructor,
-  // and use this object to populate the $driver variable.
-  public function __construct() {
-    $this->driver = new HumanDriver();
-  }
-  // A getter method that returns the driver object
-  public function getDriver() {
-    return $this -> driver;
-  }
+
+class Car 
+{
+    protected $driver;
+
+    // Create the driver object in the constructor
+    public function __construct() {
+        $this->driver = new HumanDriver();
+    }
+
+    // A getter method that returns the driver object
+    public function getDriver() {
+        return $this->driver;
+    }
+
 }
 ```
 
-The real problem arise when we need to switch dependencies. For example, if the
-technological advancements dictate us a car that is driven by a robot, we will
-find our self in a problem since the Car class only knows how to handle human
-drivers. This problem stems from directly creating the driver object inside the
-`Car` class which is known as tight coupling between classes, something that
-should be avoided as much as possible. 
+Tight coupling between classes become a real issue when we need to switch
+dependencies. In our example, say we have a robot driving the car instead of a
+human. In fact, when we do tight coupling between classes, we violate a
+fundamental principle of well designed code called the “single responsibility
+principle” (SRP), according to which a class should have only one
+responsibility. 
 
-In fact, when we do tight coupling between classes, we violate a fundamental
-principle of well designed code called the “single responsibility principle”
-(SRP), according to which a class should have only one responsibility. 
-
-In order to respect this principle, the only code that the `Car` class needs to
-handle is that of cars, without messing with any other code.
-
-**The solution: dependency injection**
+### The Right Way: Dependency Injection
 
 First, rewrite `Car` class so it can set its own `$driver` property that is
 passed as a parameter to the constructor.
@@ -293,18 +309,20 @@ passed as a parameter to the constructor.
 ```php
 // The Car class gets the driver object injected
 // to its constructor
-class Car {
-  protected $driver;
-  // The constructor sets the value of the $driver
-  public function __construct($driver) {
-    $this->driver = $driver;
-  }
-  // A getter method that returns the driver object
-  // from within the car object
-  public function getDriver()
-  {
-    return $this->driver;
-  }
+class Car 
+{
+    protected $driver;
+    // The constructor sets the value of the $driver
+    public function __construct($driver) 
+    {
+        $this->driver = $driver;
+    }
+    // A getter method that returns the driver object
+    // from within the car object
+    public function getDriver()
+    {
+        return $this->driver;
+    }
 }
 ```
 
@@ -318,6 +336,7 @@ $car = new Car($humanDriver);
 $robotDriver = new RobotDriver();
 $car = new Car($robotDriver);
 ```
+
 ## Exceptions handling
 
 Exception handling is an elegant way to handle errors which are beyond the
