@@ -13,13 +13,20 @@ There are two directories of interest:
 OOP is a programming style in which we group variables and methods of a
 particular topic into single class. OOP is heavily adopted because it support
 code organization, provides modularity and reduces the need to repeat
-ourselves. The main object-oriented concept are as follows:
+ourselves. One of the fundamental advantage of this programming style is that
+the data and the operations that manipulate the data (the code) are both
+encapsulated in the object.
 
-- Encapsulation
-- Inheritance
-- Polymorphism
-- Composition
+The main object-oriented concept are as follows:
 
+- Encapsulation: A single object contains both its behaviors (methods) and data
+  (properties).
+- Inheritance: A class can inherit from another class and take advantage of the
+  methods and properties defined by the superclass. (is a)
+- Polymorphism: Similar objects can respond to the same messages (method) in
+  different ways. [more on this](#polymorphism)
+- Composition: an object is built from other objects. embedding classes in
+  other classes. (has a)
 
 ## Classes
 
@@ -40,12 +47,15 @@ person has attributes, such as eye color, age, height, and so on. A person also
 has behaviors, such as walking, talking, breathing, and so a. In its basic
 definition, an object is an entity that contains both data and behavior.
 
-### What can be seen as an object?
+### What are objects?
 
-Objects are instance of a class. A class holds the methods and properties that
-are shared by all of the objects that are created from it. a User instance can
-be create from a User class. Although objects share the same code, the can
-behave differently because they can have different values assigned to them.
+Objects are the building blocks of an OO program, they are basicly instances of
+a some class. A program that leverages OO stlye is basically a collection of
+objects. A class holds the behaviors (contained in methods) and data
+(properties) that are shared by all the objects that are created from it. 
+
+The behavior of an object represents what the object can do and the data stored
+within an object represents the state of the object. 
 
 
 [See cheatsheet](./src/class.php)
