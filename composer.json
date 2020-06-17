@@ -6,5 +6,8 @@
         "psr-4": {
             "PHPOOP\\": "src"
         }
+    },
+    "config": {
+        "bin-dir": "bin"
     }
 }
