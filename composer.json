@@ -12,5 +12,9 @@
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.5"
+    },
+    "scripts": {
+        "phpcs": "bin/phpcs --standard=PSR2 ./src",
+        "phpcbf": "bin/phpcbf --standard=PSR2 ./src"
     }
 }
