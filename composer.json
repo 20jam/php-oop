@@ -9,5 +9,8 @@
     },
     "config": {
         "bin-dir": "bin"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.5"
     }
 }
