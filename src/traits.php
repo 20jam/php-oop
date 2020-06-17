@@ -71,7 +71,7 @@ class TheWorldIsNotEnough
 
 trait Logger
 {
-    function log($msg)
+    public function log($msg)
     {
         echo date('Y-m-d h:i:s') . ':' . '(' . __CLASS__ .  ') ' . $msg . PHP_EOL;
     }
@@ -82,7 +82,7 @@ class BankAccount
     use Logger;
     private $accountNumber;
 
-    function __construct($accountNumber)
+    public function __construct($accountNumber)
     {
         $this->accountNumber = $accountNumber;
         $this->log("A new $accountNumber bank account created");
@@ -92,7 +92,7 @@ class BankAccount
 class User
 {
     use Logger;
-    function __construct()
+    public function __construct()
     {
         $this->log("A new user created");
     }

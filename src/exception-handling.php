@@ -10,7 +10,7 @@ There are two main scenarions with handling exceptions:
 */
 
 // let's create a custom class to handle a certain input data error
-class invalidFuelEconomyArgumentException extends InvalidArgumentException
+class InvalidFuelEconomyArgumentException extends InvalidArgumentException
 {
 }
 
@@ -22,10 +22,10 @@ class FuelEconomy
     {
         if ($distance < 0) {
             // Throw custom error message, instead of an error
-            throw new invalidFuelEconomyArgumentException("The the distance cannot be < 0");
+            throw new InvalidFuelEconomyArgumentException("The the distance cannot be < 0");
         }
         if ($gas <= 0) {
-            throw new invalidFuelEconomyArgumentException("The gas consumption cannot be <= 0");
+            throw new InvalidFuelEconomyArgumentException("The gas consumption cannot be <= 0");
         }
         return $distance/$gas;
     }
@@ -53,9 +53,7 @@ foreach ($dataFromCars as $i => $value) {
         $fuelEconomy = new FuelEconomy();
         echo "Data set #".($i + 1).". ";
         echo "Fuel economy is:".$fuelEconomy->calculate($value['distance'], $value['gas'])."\n";
-    }
-    // Catch block handles the exceptions
-    catch (invalidFuelEconomyArgumentException $e) {
+    } catch (InvalidFuelEconomyArgumentException $e) { // Catch block handles the exceptions
         // Echo the custom error message
         echo "Error: ".$e->getMessage()."\n";
     }

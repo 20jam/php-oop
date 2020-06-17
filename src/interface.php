@@ -27,7 +27,7 @@ class Bird
 // some implementations of birds
 class Dove extends Bird implements CanFly
 {
-    var $name = "Dove";
+    public $name = "Dove";
     public function fly()
     {
         echo "I fly\n";
@@ -36,7 +36,7 @@ class Dove extends Bird implements CanFly
 
 class Penguin extends Bird implements CanSwim
 {
-    var $name = "Penguin";
+    public $name = "Penguin";
     public function swim()
     {
         echo "I swim\n";
@@ -45,7 +45,7 @@ class Penguin extends Bird implements CanSwim
 
 class Duck extends Bird implements CanFly, CanSwim
 {
-    var $name = "Duck";
+    public $name = "Duck";
     public function fly()
     {
         echo "I fly\n";
@@ -101,12 +101,12 @@ class GoogleCom implements WebApp
     {
         echo "Login the user with email: " . $email;
     }
-    
+
     public function register($email, $password, $username)
     {
         echo "User registered: Email=" . $email . " and Username= " . $username;
     }
-    
+
     public function logout()
     {
         echo "User logged out!";
@@ -127,12 +127,12 @@ class MediumCom implements WebApp, CMS
     {
         echo "Login the user with email: " . $email;
     }
-    
+
     public function register($email, $password, $username)
     {
         echo "User registered: Email=" . $email . " and Username= " . $username;
     }
-    
+
     public function logout()
     {
         echo "User logged out!";
