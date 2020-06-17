@@ -2,40 +2,53 @@
 // Example 1: -----------------------------------------------------------------
 // Context:
 // We have multiple user types that all share a number of methods and properties,
-// instead of copying and pasting the things that these user types share, we can 
+// instead of copying and pasting the things that these user types share, we can
 // simply create a parent class that contains shared properties and function.
 
-class User {
+class User
+{
   // Properties
-  protected $username; // protected so it can be shared across child classes
-  protected $password;
+    protected $username; // protected so it can be shared across child classes
+    protected $password;
   // Methods
-  public function setUsername($username) { 
-    $this->username = $username; 
-  }
-  public function getUsername() { 
-    return $this->username; 
-  }
-  public function setPassword($pass) { 
-    $this->password = $pass; 
-  }
-  public function login($pass) { 
-    if ($this->password == $pass) {
-      echo "\nWelcome back\n";
-    } else {
-      echo "\nWrong password, please try again.\n";
+    public function setUsername($username)
+    {
+        $this->username = $username;
     }
-  }
+    public function getUsername()
+    {
+        return $this->username;
+    }
+    public function setPassword($pass)
+    {
+        $this->password = $pass;
+    }
+    public function login($pass)
+    {
+        if ($this->password == $pass) {
+            echo "\nWelcome back\n";
+        } else {
+            echo "\nWrong password, please try again.\n";
+        }
+    }
 }
 
-class Admin extends User {
-  public function whoami(){return "An System Admin";}
-}; 
+class Admin extends User
+{
+    public function whoami()
+    {
+        return "An System Admin";
+    }
+};
 $admin = new Admin();
 
-class Creator extends User {
-  public function whoami(){return "A content creator";}
-}; 
+class Creator extends User
+{
+    public function whoami()
+    {
+        return "A content creator";
+    }
+};
 $creator = new Creator();
 
 

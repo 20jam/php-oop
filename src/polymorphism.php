@@ -6,25 +6,25 @@
 // Shapes
 // using: interfaces
 
-interface Shape 
+interface Shape
 {
     public function calcArea();
 }
 
-class Circle implements Shape 
+class Circle implements Shape
 {
     private $radius;
     public function __construct($radius)
     {
         $this -> radius = $radius;
     }
-    public function calcArea() 
+    public function calcArea()
     {
         return $this -> radius * $this -> radius * pi();
     }
 }
 
-class Rectangle implements Shape 
+class Rectangle implements Shape
 {
     private $width;
     private $height;
@@ -39,7 +39,7 @@ class Rectangle implements Shape
     }
 }
 
-$rectangle = new Rectangle(5,5);
+$rectangle = new Rectangle(5, 5);
 echo $rectangle->calcArea() . "\n" . PHP_EOL;
 
 $circle = new Circle(3);
@@ -53,7 +53,7 @@ echo $circle->calcArea() . "\n" . PHP_EOL;
 
 interface TutorialILike
 {
-  public function likemsg();
+    public function likemsg();
 }
 
 class LikePHP implements TutorialILike
@@ -82,7 +82,7 @@ class LikeJava implements TutorialILike
     }
 }
 
-// Simulation 
+// Simulation
 $objPHP = new LikePHP("PHP");
 echo $objPHP->likemsg();
 
@@ -92,7 +92,7 @@ echo $objJava->likemsg();
 
 // Example 3: -----------------------------------------------------------------
 // source:
-// Context: 
+// Context:
 // Animal Eating function
 // using interfaces
 
@@ -102,7 +102,7 @@ interface Animal
     public function talk(bool $shout) : string;
 }
 
-class Cat implements Animal 
+class Cat implements Animal
 {
     public function eat(string $food): bool
     {
@@ -146,7 +146,6 @@ class Dog implements Animal
             return "Woof.\n";
         }
     }
-    
 }
 
 // Simulation
@@ -157,7 +156,6 @@ $pets = array(
     'snowflake' => new Cat(),
 );
 
-foreach ($pets as $pet){
+foreach ($pets as $pet) {
     echo $pet->talk(false);
 }
-

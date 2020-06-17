@@ -3,13 +3,13 @@
 class ClassName
 {
   // set/declare property
-  public $classname;
-  public $number = 1;
+    public $classname;
+    public $number = 1;
   // define a method
-  public function setClassName($name) 
-  {
-    $this->classname = $name;
-  }
+    public function setClassName($name)
+    {
+        $this->classname = $name;
+    }
 }
 
 // Initiate new class Instance:
