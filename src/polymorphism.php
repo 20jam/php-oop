@@ -40,11 +40,8 @@ class Rectangle implements Shape
     }
 }
 
-$rectangle = new Rectangle(5, 5);
-echo $rectangle->calcArea() . "\n" . PHP_EOL;
-
-$circle = new Circle(3);
-echo $circle->calcArea() . "\n" . PHP_EOL;
+echo (new Rectangle(5, 5))->calcArea() . "\n" . PHP_EOL;
+echo (new Circle(3))->calcArea() . "\n" . PHP_EOL;
 
 // Example 2: -----------------------------------------------------------------
 // source:
@@ -84,11 +81,8 @@ class LikeJava implements TutorialILike
 }
 
 // Simulation
-$objPHP = new LikePHP('PHP');
-echo $objPHP->likemsg();
-
-$objJava = new LikeJava('Java');
-echo $objJava->likemsg();
+echo (new LikePHP('PHP'))->likemsg();
+echo (new LikeJava('Java'))->likemsg();
 
 
 // Example 3: -----------------------------------------------------------------
