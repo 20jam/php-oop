@@ -1,10 +1,9 @@
 <?php
+
 // Dependency Injection example
 // Now you don't need to use inheritance when you need to use more than one class.
 
-
-// Normal class
-class Author
+class Author // Normal class
 {
     private $firstName;
     private $lastName;

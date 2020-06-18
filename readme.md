@@ -7,6 +7,8 @@ There are two directories of interest:
 - `./snippets`: contains code snippets. [Currently, only UltiSnips vim]
 - `./src`: contains examples for every section in this file, it can be used while solving challenges.
 
+For contribution see [here](#contribute)
+
 # NOTES
 ## Object Oriented Programming
 
@@ -413,3 +415,22 @@ general design guidelines to be followed when developing classes:
 # END
 
 [Currently, only UltiSnips vim]: https://github.com/sirver/UltiSnips
+
+# Contribute
+If you like to contribute, it's awesome! Just keep in mind this project using phpcs to achieve unified code style.
+So make sure you run
+
+`composer install` to install the dev dependencies
+
+Then you can run code checks by using the composer script
+
+`composer phpcs`
+
+or use the code beautifier to auto fix violations.
+
+`composer phpcbf`
+
+**Please run phpcs and solve all issues before creating a pull request**
+
+(i) This project is not about a real code lib. It's about OOP examples for better understanding. That's why the
+ruleset.xml exclude 2 fundamental PSR1 rules.
