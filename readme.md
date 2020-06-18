@@ -417,7 +417,7 @@ general design guidelines to be followed when developing classes:
 [Currently, only UltiSnips vim]: https://github.com/sirver/UltiSnips
 
 # Contribute
-If you like to contribue, it's awesome! Just keep in mind this project using phpcs to achieve unified code style.
+If you like to contribute, it's awesome! Just keep in mind this project using phpcs to achieve unified code style.
 So make sure you run
 
 `composer install` to install the dev dependencies
@@ -430,7 +430,7 @@ or use the code beautifier to auto fix violations.
 
 `composer phpcbf`
 
-**Please run phpcs and slove all issues before creating a pull request**
+**Please run phpcs and solve all issues before creating a pull request**
 
 (i) This project is not about a real code lib. It's about OOP examples for better understanding. That's why the
 ruleset.xml exclude 2 fundamental PSR1 rules.
