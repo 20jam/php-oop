@@ -1,4 +1,5 @@
 <?php
+
 // Example 1: -----------------------------------------------------------------
 // source:
 // https://leanpub.com/the-essentials-of-object-oriented-php
@@ -7,8 +8,8 @@
 // from the old price and the price change in dollars. and another trait for special prices
 // with a method that announce that the model is on special sell:
 
-// Define traits
-trait Price
+
+trait Price // Define traits
 {
     public function changePriceByDollars($price, $change)
     {
@@ -55,13 +56,14 @@ trait HelloWorld
 class TheWorldIsNotEnough
 {
     use HelloWorld;
+
     public function sayHello()
     {
         echo 'Hello Universe!';
     }
 }
 
-(new TheWorldIsNotEnough)->sayHello();
+(new TheWorldIsNotEnough())->sayHello();
 
 // Example 3: -----------------------------------------------------------------
 // source:
@@ -80,6 +82,7 @@ trait Logger
 class BankAccount
 {
     use Logger;
+
     private $accountNumber;
 
     public function __construct($accountNumber)
@@ -92,6 +95,7 @@ class BankAccount
 class User
 {
     use Logger;
+
     public function __construct()
     {
         $this->log("A new user created");
@@ -128,6 +132,7 @@ trait CrudControllerTrait
 class AdminCrudController extends AdminController
 {
     use CrudControllerTrait;
+
   /* Controller-specific methods inherited from Controller. */
   /* Admin-specific methods inherited from AdminController. */
   /* CRUD-specific methods defined by CrudControllerTrait. */

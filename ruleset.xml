@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--http://edorian.github.io/php-coding-standard-generator/#phpcs-->
 <ruleset name="php-oop-cs-rules">
-    <rule ref="PSR2">
+    <rule ref="PSR12">
         <!--
             This is no real code, the examples contain multiply classes and additional
             code in one file. This makes them easy to read/follow.

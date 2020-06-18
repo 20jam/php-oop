@@ -1,4 +1,5 @@
 <?php
+
 // Example 1: ---------------------------------------------------------------------------------
 // source:
 // https://www.php.net/manual/en/language.oop5.interfaces.php
@@ -73,13 +74,13 @@ function describe($bird)
 }
 
 // describe these birds please
-describe(new Penguin);
+describe(new Penguin());
 echo "---\n";
 
-describe(new Dove);
+describe(new Dove());
 echo "---\n";
 
-describe(new Duck);
+describe(new Duck());
 
 // Example 2: ---------------------------------------------------------------------------------
 // source:
@@ -99,17 +100,17 @@ class GoogleCom implements WebApp
     // methods definition
     public function login($email, $password)
     {
-        echo "Login the user with email: " . $email;
+        echo 'Login the user with email: ' . $email;
     }
 
     public function register($email, $password, $username)
     {
-        echo "User registered: Email=" . $email . " and Username= " . $username;
+        echo 'User registered: Email=' . $email . ' and Username= ' . $username;
     }
 
     public function logout()
     {
-        echo "User logged out!";
+        echo 'User logged out!';
     }
 }
 /// Another interface
@@ -125,21 +126,21 @@ class MediumCom implements WebApp, CMS
     // methods definition
     public function login($email, $password)
     {
-        echo "Login the user with email: " . $email;
+        echo 'Login the user with email: ' . $email;
     }
 
     public function register($email, $password, $username)
     {
-        echo "User registered: Email=" . $email . " and Username= " . $username;
+        echo 'User registered: Email=' . $email . ' and Username= ' . $username;
     }
 
     public function logout()
     {
-        echo "User logged out!";
+        echo 'User logged out!';
     }
 
     public function publishPost($post)
     {
-        echo $post." published!";
+        echo $post . ' published!';
     }
 }

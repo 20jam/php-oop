@@ -1,4 +1,5 @@
 <?php
+
 // Example 1: -----------------------------------------------------------------
 // source:
 // https://leanpub.com/the-essentials-of-object-oriented-php
@@ -65,7 +66,7 @@ class LikePHP implements TutorialILike
     }
     public function likemsg()
     {
-        echo "I just love to read " . $this->topic . " Tutorials\n" . PHP_EOL;
+        echo 'I just love to read ' . $this->topic . ' Tutorials' . PHP_EOL;
     }
 }
 
@@ -78,15 +79,15 @@ class LikeJava implements TutorialILike
     }
     public function likemsg()
     {
-        echo "I just love to read ". $this->topic . " Tutorials\n" . PHP_EOL;
+        echo 'I just love to read ' . $this->topic . ' Tutorials' . PHP_EOL;
     }
 }
 
 // Simulation
-$objPHP = new LikePHP("PHP");
+$objPHP = new LikePHP('PHP');
 echo $objPHP->likemsg();
 
-$objJava = new LikeJava("Java");
+$objJava = new LikeJava('Java');
 echo $objJava->likemsg();
 
 
@@ -98,53 +99,44 @@ echo $objJava->likemsg();
 
 interface Animal
 {
-    public function eat(string $food) : bool;
-    public function talk(bool $shout) : string;
+    public function eat(string $food): bool;
+    public function talk(bool $shout): string;
 }
 
 class Cat implements Animal
 {
     public function eat(string $food): bool
     {
-        if ($food === "tuna") {
-            return true;
-        } else {
-            return false;
-        }
+        return $food === 'tuna';
     }
 
     public function talk(bool $shout): string
     {
         if ($shout === true) {
-            return "MEOW!\n";
-        } else {
-            return "Meow.\n";
+            return 'MEOW!' . PHP_EOL;
         }
+
+        return 'Meow.' . PHP_EOL;
     }
 }
 
 class Dog implements Animal
 {
     // Properties
-    
+
     // Methods
     public function eat(string $food): bool
     {
-        if (($food === "dog food") || ($food === "meat")) {
-            return true;
-        } else {
-            return false;
-        }
-        ;
+        return $food === 'dog food' || $food === 'meat';
     }
 
     public function talk(bool $shout): string
     {
         if ($shout === true) {
-            return "WOOF!\n";
-        } else {
-            return "Woof.\n";
+            return 'WOOF!' . PHP_EOL;
         }
+
+        return 'Woof.' . PHP_EOL;
     }
 }
 

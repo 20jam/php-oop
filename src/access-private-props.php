@@ -1,4 +1,5 @@
 <?php
+
 // Example 1: -----------------------------------------------------------------
 // source:
 // https://leanpub.com/the-essentials-of-object-oriented-php
@@ -16,12 +17,12 @@ class Car
     }
     public function getModel()
     {
-        return "The car model is " . $this -> model;
+        return 'The car model is ' . $this -> model;
     }
-};
+}
 
 $mercedes = new Car();
 
-$mercedes->setModel("Mercedes");
+$mercedes->setModel('Mercedes');
 
 echo $mercedes->getModel();

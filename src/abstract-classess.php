@@ -1,4 +1,5 @@
 <?php
+
 // Example 1: ---------------------------------------------------------------------------------
 // source:
 // https://phpenthusiast.com/object-oriented-php-tutorials/abstract-classes-and-methods
@@ -25,7 +26,7 @@ class Honda extends Car
     {
         return $this->tankVolume * 20;
     }
-};
+}
 
 class Toyota extends Car
 {
@@ -39,7 +40,7 @@ class Toyota extends Car
     {
         return "beige";
     }
-};
+}
 
 $hondaCar = new Honda();
 $toyotaCar = new Toyota();
@@ -60,12 +61,12 @@ echo "\nThis car can drive " . $hondaCar->milesOnFullTank() . ' miles on full ta
 abstract class Animal
 {
     // Methods
-    abstract public function eat(string $food) : bool;
-    
-    abstract public function talk(bool $shout) : string;
+    abstract public function eat(string $food): bool;
+
+    abstract public function talk(bool $shout): string;
 
     // non-abstract method.
-    public function walk(int $speed) : bool
+    public function walk(int $speed): bool
     {
         if ($speed > 0) {
             return true;

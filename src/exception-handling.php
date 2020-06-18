@@ -22,12 +22,12 @@ class FuelEconomy
     {
         if ($distance < 0) {
             // Throw custom error message, instead of an error
-            throw new InvalidFuelEconomyArgumentException("The the distance cannot be < 0");
+            throw new InvalidFuelEconomyArgumentException('The the distance cannot be < 0');
         }
         if ($gas <= 0) {
-            throw new InvalidFuelEconomyArgumentException("The gas consumption cannot be <= 0");
+            throw new InvalidFuelEconomyArgumentException('The gas consumption cannot be <= 0');
         }
-        return $distance/$gas;
+        return $distance / $gas;
     }
 }
 
@@ -51,11 +51,11 @@ foreach ($dataFromCars as $i => $value) {
     // where catch is accepting the exeption type and a variable to assign the exception to
     try {
         $fuelEconomy = new FuelEconomy();
-        echo "Data set #".($i + 1).". ";
-        echo "Fuel economy is:".$fuelEconomy->calculate($value['distance'], $value['gas'])."\n";
+        echo 'Data set #' . ( $i + 1) . '. ';
+        echo 'Fuel economy is:' . $fuelEconomy->calculate($value['distance'], $value['gas']) . PHP_EOL;
     } catch (InvalidFuelEconomyArgumentException $e) { // Catch block handles the exceptions
         // Echo the custom error message
-        echo "Error: ".$e->getMessage()."\n";
+        echo 'Error: ' . $e->getMessage() . PHP_EOL;
     }
 }
 

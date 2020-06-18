@@ -1,4 +1,5 @@
 <?php
+
 // Example 1: -----------------------------------------------------------------
 // source:
 // https://leanpub.com/the-essentials-of-object-oriented-php
@@ -15,11 +16,11 @@ class Car
         $this->tank += $float;
         return $this;
     }
-  // substract gallons of fuel from the tank as we ride the car
+  // subtract gallons of fuel from the tank as we ride the car
     public function ride($float)
     {
         $miles = $float;
-        $gallons = $miles/50; // one gallon per mile
+        $gallons = $miles / 50; // one gallon per mile
         $this->tank -= $gallons;
         return $this;
     }
