@@ -12,17 +12,13 @@ For contribution see [here](#contribute)
 # NOTES
 ## Object Oriented Programming
 
-OOP is a programming style in which we group variables and methods of a
-particular topic into single class. OOP is heavily adopted because it support
-code organization, provides modularity and reduces the need to repeat
-ourselves. One of the fundamental advantage of this programming style is that
-the data and the operations that manipulate the data (the code) are both
-encapsulated in the object.
+OOP is a programming style in which we group methods and variables of a
+particular topic into single class. For example, the code that relate users
+will be in User class. OOP is heavily adopted because it support code
+organization, provides modularity and reduces the need to repeat ourselves. 
 
-The main object-oriented concept are as follows:
-
-- Encapsulation: A single object contains both its behaviors (methods) and data
-  (properties).
+- Encapsulation: data and the operations that manipulate the data (the code)
+  are both encapsulated in the object.
 - Inheritance: A class can inherit from another class and take advantage of the
   methods and properties defined by the superclass. (is a)
 - Polymorphism: Similar objects can respond to the same messages (method) in
@@ -33,39 +29,33 @@ The main object-oriented concept are as follows:
 ## Classes
 
 Classes are used to group the code that handles a certain topic into one place.
-There are properties and methods inside every class that can be defined with a
-keyword of `public` `private` or `protected`. [more on this here](#public-private-and-protected-keywords)
+It is a template for creating objects, providing initial values for state
+(properties/attributes) and implementations of behavior (methods.
 
 [See cheatsheet](./src/class.php)
 
 
 ## Objects
 
-**What can be seen as an object?**
+A person can be seen as an object defined by two components: attributes (such
+as eye color, age, height) and behaviors (such as walking, talking,
+breathing). In its basic definition, an object is an entity that contains both
+data and behavior. Each person is different in terms of there age and in how
+they walk or talk. But they all instance of a class that organize their
+attributes and behavior for example Human class.
 
-When you look at a person, you see the person as an object. And an object is
-defined by two components: attributes (properties) and behaviors (methods). A
-person has attributes, such as eye color, age, height, and so on. A person also
-has behaviors, such as walking, talking, breathing, and so a. In its basic
-definition, an object is an entity that contains both data and behavior.
-
-**What are objects?**
-
-Objects are the building blocks of an OO program, they are basicly instances of
-a some class. A program that leverages OO stlye is basically a collection of
-objects. A class holds the behaviors (contained in methods) and data
-(properties) that are shared by all the objects that are created from it. 
-
-The behavior of an object represents what the object can do and the data stored
+In OOP, objects are the building blocks, they are instances of a some class. A
+program that leverages OO style is basically a collection of objects. The
+behavior of an object represents what the object can do and the data stored
 within an object represents the state of the object. 
 
 [See cheatsheet](./src/class.php)
 
 ## $this Keyword
 
-`$this` keyword are used to interact with a class method or properties from
-within the class. Among different uses of this keyword, there is chaining
-methods and properties. 
+`$this` keyword are used to interact with/refer to a class method or properties
+from within the class. Among different uses of `$this` keyword, there is
+chaining methods and properties. 
 
 [See example](./src/chaining-with-this.php)
 
@@ -91,9 +81,9 @@ object, such as save the request in a log.
 
 ## Inheritance
 
-Inheritances enable us to reduce code duplications by creating a parent/master
-class with properties and method that can be inherited by child class. In php
-we can inherit from another class by using `extends` keyword. 
+Inheritance is central concept in OOP, they enable us to reduce code
+duplications by creating a parent/master class with properties and method that
+can be inherited by child classes. In php, and many other languages, we use `extends` keyword to inherit from another class.
 
 [See example](./src/inheritance.php)
 
@@ -106,15 +96,21 @@ with a abstract keyword in front of it. They get used for multiple reasons:
 1. When we want be commit to writing certain class methods, or when we are only sure of there names.
 2. When we want child classes to define these methods.
 
+Abstract classes cannot be instantiated, and whatever non-abstract class
+derived from it must include actual implementations of all inherited abstract
+methods and properties. 
+
 [See example](./src/abstract-classess.php)
 
 ## Interfaces
 
-An interface can be considered as an outline of what a particular object can
-do. They are considered one of the main building blocks of the SOLID pattern.
-
-Interfaces allow us to create code which specifies which methods a class must
+An interface can be seen as an outline of what a particular object can do. They
+are considered one of the main building blocks of the SOLID pattern. With
+interfaces we can create code which specifies which methods a class must
 implement, without having to define how these methods are implemented. 
+
+A lot of people may find interface to be similar to abstract classes, or
+doesn't know which one to choice, here a few notes on that:
 
 Interfaces are contract, we "implement" them to provide code and behavior that
 fit the description of the interface. In the other hand, Abstract Classes are
@@ -170,11 +166,11 @@ in front of them. They enable us to approach methods and properties of a class
 without the need to first create an object out of the class. They are used
 mainly as utilities. The following are the main use cases for them:
 
-- as counters, to save the last value that has been assigned to them. For
+- As counters, to save the last value that has been assigned to them. For
   example, the method `add1ToCars()` adds 1 to the `$numberOfCars` property
   each time they are invoked.
 
-- As utlities for the main classes. Utility methods can perform all kinds of
+- As utilities for the main classes. Utility methods can perform all kinds of
   tasks, such as: conversion between measurement systems (kilograms to pounds),
   data encryption, sanitation, and any other task that is not more than a
   service for the main classes. The example given below is of a static method
@@ -201,9 +197,7 @@ hierarchies.
 
 A Trait is similar to a class, but only intended to group functionality in a
 fine-grained and consistent way. It is not possible to instantiate a Trait on
-its own. It is an addition to traditional inheritance and enables horizontal
-composition of behavior; that is, the application of class members without
-requiring inheritance. 
+its own.
 
 Some people refer to traits as "like an automatic CTRL+C/CTRL+V for your
 classes". You specificity some methods in a trait and "import" them into your
@@ -243,24 +237,15 @@ Using a namespace:
 ## Dependency Injection
 
 Dependency injection is the process whereby we input dependencies that the
-application needs directly into the object itself, instead of adding it to our
-class.
+application needs directly into the object itself. When `class A` cannot do its job
+without `class B`, we say that `class A` is dependent on `class B`.
+
+[see example](./src/dependency-injection.php)
 
 When writing a class, it's natural to use other dependencies; perhaps a
 database model class. So with dependency injection, instead of a class having
 its database model created in itself, you can create it outside that object and
 inject it in. 
-
-In other words, When `class A` cannot do its job without `class B`, we say that
-`class A` is dependent on `class B`. In order to perform this dependency, we
-have to options: injected, or initialize it.
-
-When thinking of dependency injection, there are four separate roles involved:
-
-- The service to be injected
-- The client that depends on the service being injected
-- The interface that determines how the client can use the service
-- The injector that is responsible for instantiating the service and injecting it into
 
 Lets look at the two ways where we make one class dependent on other:
 
@@ -343,26 +328,26 @@ $car = new Car($robotDriver);
 
 Exception handling is an elegant way to handle errors which are beyond the
 program’s scope. For example, if our application fails to contact the database,
-we can use exception hadling to contact another data source or to provide
-instructions to the users that they need to cntact technical support.
+we can use exception handling to contact another data source or to provide
+instructions to the users that they need to contact technical support.
 
-In php we can hadle exception with making the use of `Exception` class
+In php we can handle exception with making the use of `Exception` class
 
 [See example](./src/exception-handling.php)
 
 Rules to follow when implementing exceptions handling 
 
 - Know what to do with an exception before throwing it.
-- If you have no idea what to do with a caugt exception then it shouldn't be caught.
+- If you have no idea what to do with a caught exception then it shouldn't be caught.
 
 ## Design Guidelines
 
 ## Classes
 
-As we all know by know, OOP Style supports the idea of creating classes that
-are complete packages, encapsulating the methods and properties of a single
-entity. So, a class can be represent a logical component. The following are
-general design guidelines to be followed when developing classes:
+OOP supports the idea of creating classes that are complete packages,
+encapsulating the methods and properties of a single entity. So, a class can be
+represent a logical component. The following are general design guidelines to
+be followed when developing classes:
 
 1. **Mimic the real world**: When creating classes, we should design them in a
    way that represents the true behavior of the object. For example, `User`
@@ -417,8 +402,9 @@ general design guidelines to be followed when developing classes:
 [Currently, only UltiSnips vim]: https://github.com/sirver/UltiSnips
 
 # Contribute
-If you like to contribute, it's awesome! Just keep in mind this project using phpcs to achieve unified code style.
-So make sure you run
+
+If you like to contribute, it's awesome! Just keep in mind this project using
+phpcs to achieve unified code style. So make sure you run
 
 `composer install` to install the dev dependencies
 
@@ -432,5 +418,14 @@ or use the code beautifier to auto fix violations.
 
 **Please run phpcs and solve all issues before creating a pull request**
 
-(i) This project is not about a real code lib. It's about OOP examples for better understanding. That's why the
-ruleset.xml exclude 2 fundamental PSR1 rules.
+(i) This project is not about a real code lib. It's about OOP examples for
+better understanding. That's why the ruleset.xml exclude 2 fundamental PSR1
+rules.
+
+**Areas of contribution**
+
+- Adding Examples
+- Adding notes to better understand Examples
+- Adding challenges with there solutions in `./src/challenges`  
+- Revising, rephrasing or adding new notes in readme to better clarify
+  something.
