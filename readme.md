@@ -414,7 +414,7 @@ general design guidelines to be followed when developing classes:
 
 [Currently, only UltiSnips vim]: https://github.com/sirver/UltiSnips
 
-# Contribue
+# Contribute
 If you like to contribue, it's awesome! Just keep in mind this project using phpcs to achieve unified code style.
 So make sure you run
 
