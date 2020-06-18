@@ -7,6 +7,8 @@ There are two directories of interest:
 - `./snippets`: contains code snippets. [Currently, only UltiSnips vim]
 - `./src`: contains examples for every section in this file, it can be used while solving challenges.
 
+For contribution see [here](#contribute)
+
 # NOTES
 ## Object Oriented Programming
 
